@@ -1,5 +1,7 @@
 'use strict';
 
+// Scoping
+
 //Function scope
 
 function calcAge(birthYear) {
@@ -40,3 +42,5 @@ function calcAge(birthYear) {
 
 const firstName = 'Chintu';
 calcAge(1995);
+
+// End Scoping
