@@ -1,5 +1,7 @@
 'use strict';
 
+// Execution context consist of variable environment(hoisting), scope chain and this keyword.
+
 // Scoping
 
 //Function scope
@@ -91,3 +93,37 @@
 // console.log(z === window.z);
 
 // End Hoisting
+
+// This keyword
+// special variable that is created for every execution context(every function). It depends on how the function is called, and its value is assigned when the function is actually called.
+
+// console.log(this); // this keyword in the global scope is the window object
+
+// const calcAge = function (birthYear) {
+//   console.log(2037 - birthYear);
+//   console.log(this); // inside regular function call this keyword will be undefined as we are in strict mode. in sloppy mode, it would also be the global object.
+// };
+// calcAge(1991);
+
+// const calcAgeArrow = birthYear => {
+//   console.log(2037 - birthYear);
+//   console.log(this); // inside regular function call this keyword will be undefined as we are in strict mode. in sloppy mode, it would also be the global object.
+// };
+// calcAge(1980);
+
+// const chintu = {
+//   year: 1991,
+//   calcAge: function () {
+//     console.log(this); // this keyword will point to chintu in this case is because chintu was the object calling that method.
+//     console.log(2037 - this.year);
+//   },
+// };
+// chintu.calcAge();
+
+// const dogesh = {
+//   year: 2017,
+// };
+// dogesh.calcAge = chintu.calcAge; // method borrowing
+// dogesh.calcAge();
+
+// End This keyword
