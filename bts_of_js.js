@@ -126,4 +126,7 @@
 // dogesh.calcAge = chintu.calcAge; // method borrowing
 // dogesh.calcAge();
 
+// const f = chintu.calcAge;
+// f(); // undefined because it is now a regular function call i.e., not attached to any object.
+
 // End This keyword
