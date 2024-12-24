@@ -45,6 +45,7 @@
 // calcAge(1995);
 
 // End Scoping
+/////////////////////////////////
 
 // Hoisting
 // makes some types of variables accessible/usable in the code before they are actually declared. ''Variables lifeted to the top of their scope''.
@@ -93,6 +94,7 @@
 // console.log(z === window.z);
 
 // End Hoisting
+/////////////////////////////////////
 
 // This keyword
 // special variable that is created for every execution context(every function). It depends on how the function is called, and its value is assigned when the function is actually called.
@@ -130,3 +132,110 @@
 // f(); // undefined because it is now a regular function call i.e., not attached to any object.
 
 // End This keyword
+//////////////////////////////////////
+
+// Regular function VS Arrow Function
+
+// var firstName = 'Dogesh';
+
+// const chintu = {
+//   firstName: 'Chintu',
+//   year: 1991,
+//   calcAge: function () {
+// console.log(this);
+// console.log(2037 - this.year);
+
+// Solution 1
+// const self = this; //self or that
+// const isMillenial = function () {
+//   console.log(self);
+//   console.log(self.year >= 1981 && self.year <= 1996);
+// };
+
+// Solution 2
+//     const isMillenial = () => {
+//       console.log(this);
+//       console.log(this.year >= 1981 && this.year <= 1996);
+//     };
+
+//     isMillenial();
+//   },
+
+//   greet: function () {
+//     console.log(this);
+//     console.log(`Hey ${this.firstName}`);
+//   },
+//   greet: () => {
+//     console.log(this);
+//     console.log(`Hey ${this.firstName}`); //print hey undefined as this keyword is window object here.
+//   },
+// };
+// chintu.greet();
+// chintu.calcAge();
+
+// Arguments Keyword
+// const addExpr = function (a, b) {
+//   console.log(arguments);
+//   return a + b;
+// };
+// addExpr(2, 5);
+// addExpr(2, 5, 8, 12);
+
+// var addArrow = (a, b) => {
+//   console.log(arguments);
+//   return a + b;
+// };
+// addArrow(2, 5, 8);
+
+// End Regular function VS Arrow function
+////////////////////////////////////////
+
+// Object refrences
+
+// const sakshi1 = {
+//   firstName: 'Sakshi',
+//   lastName: 'Jadhav',
+//   age: 20,
+// };
+
+// function marryPerson(originalPerson, newLastName) {
+//   originalPerson.lastName = newLastName;
+//   return originalPerson;
+// }
+
+// const marriedSakshi = marryPerson(sakshi1, 'Sinha');
+
+// const marriedSakshi = sakshi1;
+// marriedSakshi.lastName = 'Sinha';
+
+// console.log('Before:', sakshi1);
+// console.log('After:', marriedSakshi);
+
+// const sakshi = {
+//   firstName: 'Sakshi',
+//   lastName: 'Jadhav',
+//   age: 20,
+//   family: ['Chintu', 'Dogesh'],
+// };
+
+// Shallow copy
+// const sakshiCopy = { ...sakshi };
+// sakshiCopy.lastName = 'Sinha';
+
+// console.log(sakshi, sakshiCopy);
+// sakshiCopy.family.push('Bala');
+// sakshiCopy.family.push('Shera');
+
+// console.log('Before:', sakshi);
+// console.log('After:', sakshiCopy);
+
+// Deep copy
+// const sakshiClone = structuredClone(sakshi);
+// sakshiClone.family.push('Bala');
+// sakshiClone.family.push('Shera');
+
+// console.log('Original:', sakshi);
+// console.log('Clone:', sakshiClone);
+
+// End object refrences
+////////////////////////////
