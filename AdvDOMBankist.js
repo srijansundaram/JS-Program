@@ -11,6 +11,7 @@ const tabs = document.querySelectorAll('.operations__tab');
 const tabsContainer = document.querySelector('.operations__tab-container');
 const tabsContent = document.querySelectorAll('.operations__content');
 const header = document.querySelector('.header');
+const allSections = document.querySelectorAll('.section');
 
 ///////////////////////////////////////
 // Modal window
@@ -159,7 +160,6 @@ headerObserver.observe(header);
 
 ///////////////////////////////////////
 // Reveal sections
-const allSections = document.querySelectorAll('.section');
 
 const revealSection = function (entries, observer) {
   const [entry] = entries;
